@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title> UTS PPM no 2 (Koperasi)    </title>
+
+        <script type="text/javascript"> 
+
+        var pinjam = [];
+        var cicil = [];
+        var kembalian = [];
+        var counter = 0;
+        function hitung(){
+            var i = parseInt(document.getElementById("angkapinjaman").value);
+            var j = parseInt(document.getElementById("angkacicilan").value);
+            var total = i*j;
+            if(j>=1 && j<=6 ){
+                total = i + parseFloat(total*2/100);
+
+            }
+            else if(j>=7 && j<=12){
+                total = i + parseFloat(total*3/200);
+
+            }
+            else if(j>12){
+                total = i + parseFloat(total*1/100);
+            }
+            
+            document.getElementById("totalkembali").innerHTML = parseFloat(total);
+
+            pinjam.push(i);
+            cicil.push(j);
+            kembalian.push(total);
+
+
+        }
+
+        </script>
+    </head>
+<body>
+    <section data-role = "page" id = "win1">
+        <header data-role="header">
+            <h1>Pemasukan angka pinjaman</h1>
+
+        </header>
+
+        <article data-role="content">
+           <form>Angka Pinjaman : </form>
+           <input type="text" id="angkapinjaman">
+           <br>
+           <form>Angka Cicilan : </form>
+           <input type="text" id="angkacicilan">
+           <br>
+            <button type="button" onclick="hitung()"> perhitungan </button>
+           <a href="#popupBasic" data-rel="popup">Open Popup</a>
+ 
+            <div data-role="popup" id="popupBasic" >
+            <p id="totalkembali"></p>
+            </div>
+
+           <br>
+
+           <button type = "button" onclick="clear()"> clear field </button>
+
+
+        </article>
+
+        <footer data-role="footer">
+
+            <button type="button"  onclick = "web2()"><a href="#win2">List Cicilan</a></button>
+        </footer>
+    </section>
+
+    <section data-role="page" id = "win2">
+        <header data-role="header">
+            <h1>Header</h1>
+
+        </header>
+
+        <article data-role="content">
+            <h1>content</h1>
+
+        </article>
+
+        <footer data-role="footer">
+   
+            <a href="#win1" style="text-align: center;">Kembali ke Pemasukan</a>
+        </footer>
+        
+    </section>
+
+
+</body>
+
+
+</html>
