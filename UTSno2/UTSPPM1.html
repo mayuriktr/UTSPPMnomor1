@@ -6,6 +6,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <title> UTS PPM no 2 (Koperasi) </title>
 
     <script type="text/javascript">
@@ -36,7 +37,7 @@
             cicil.push(j);
             kembalian.push(total);
 
-
+           
         }
 
         function clear2() {
@@ -44,21 +45,46 @@
             document.getElementById("angkabaru").innerHTML = parseInt(counter + 1);
         }
 
-        function tampildata() {
-            for (var i = 0; i < counter; i++) {
-
+       function tampildata(){
+        for(var k = 0; k<counter;k++){
+            if(k == 0){
+            document.getElementById("pinjaman1").innerHTML = parseInt(pinjam[k]);
+            document.getElementById("cicilan1").innerHTML = parseInt(cicil[k]);
+            document.getElementById("totalKembali1").innerHTML = parseFloat(kembalian[k]);
 
             }
 
+            if(k == 1){
+            document.getElementById("pinjaman2").innerHTML = parseInt(pinjam[k]);
+            document.getElementById("cicilan2").innerHTML = parseInt(cicil[k]);
+            document.getElementById("totalKembali2").innerHTML = parseFloat(kembalian[k]);
+
+            }
+            if(k == 2){
+            document.getElementById("pinjaman3").innerHTML = parseInt(pinjam[k]);
+            document.getElementById("cicilan3").innerHTML = parseInt(cicil[k]);
+            document.getElementById("totalKembali3").innerHTML = parseFloat(kembalian[k]);
+
+            }
+            if(k == 3){
+            document.getElementById("pinjaman4").innerHTML = parseInt(pinjam[k]);
+            document.getElementById("cicilan4").innerHTML = parseInt(cicil[k]);
+            document.getElementById("totalKembali4").innerHTML = parseFloat(kembalian[k]);
+
+            }
+            if(k == 4){
+            document.getElementById("pinjaman5").innerHTML = parseInt(pinjam[k]);
+            document.getElementById("cicilan5").innerHTML = parseInt(cicil[k]);
+            document.getElementById("totalKembali5").innerHTML = parseFloat(kembalian[k]);
+
+            }
 
         }
 
+       }
+ 
+
     </script>
-
-    <script type="javascript">
-
-
-        </script>
 </head>
 
 <body>
@@ -109,12 +135,48 @@
 
         <article data-role="content">
             <button type="button" onclick="tampildata()">Menampilkan data</button>
-            
+            <div data-role="collapsible-set">
+ 
+                <div data-role="collapsible" data-collapsed="false">
+                  <h3>Pinjaman 1</h3>
+                  <p id = "pinjaman1"></p>
+                  <p id  = "cicilan1"></p>
+                  <p id = "totalKembali1"></p>
+                </div>
+               
+                <div data-role="collapsible">
+                  <h3>Pinjaman 2</h3>
+                  <p id = "pinjaman2"></p>
+                  <p id  = "cicilan2"></p>
+                  <p id = "totalKembali2"></p>
+                </div>
 
+                <div data-role="collapsible">
+                    <h3>Pinjaman 3</h3>
+                 <p id = "pinjaman3"></p>
+                    <p id  = "cicilan3"></p>
+                    <p id = "totalKembali3"></p>
+                  </div>
+
+                  <div data-role="collapsible">
+                    <h3>Pinjaman 4</h3>
+                    <p id = "pinjaman4"></p>
+                    <p id  = "cicilan4"></p>
+                    <p id = "totalKembali4"></p>
+                  </div>
+
+                  <div data-role="collapsible">
+                    <h3>Pinjaman 5</h3>
+                    <p id = "pinjaman5"></p>
+                    <p id  = "cicilan5"></p>
+                    <p id = "totalKembali5"></p>
+                  </div>
+               
+              </div>
         </article>
 
         <footer data-role="footer">
-
+            
             <a href="#win1" style="text-align: center;">Kembali ke Pemasukan</a>
         </footer>
 
