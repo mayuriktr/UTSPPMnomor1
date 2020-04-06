@@ -1,1 +1,3 @@
 c14180078@john.petra.ac.id
+git remote add origin https://github.com/mayuriktr/UTSPPMnomor1.git
+git push -u origin master
