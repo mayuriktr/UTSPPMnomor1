@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title> UTS PPM no 2 (Koperasi)    </title>
 
-        <script type="text/javascript"> 
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> UTS PPM no 2 (Koperasi) </title>
+
+    <script type="text/javascript">
 
         var pinjam = [];
         var cicil = [];
         var kembalian = [];
         var counter = 0;
-        function hitung(){
+        function hitung() {
             var i = parseInt(document.getElementById("angkapinjaman").value);
             var j = parseInt(document.getElementById("angkacicilan").value);
-            var total = i*j;
-            if(j>=1 && j<=6 ){
-                total = i + parseFloat(total*2/100);
+            var total = i * j;
+            if (j >= 1 && j <= 6) {
+                total = i + parseFloat(total * 2 / 100);
 
             }
-            else if(j>=7 && j<=12){
-                total = i + parseFloat(total*3/200);
+            else if (j >= 7 && j <= 12) {
+                total = i + parseFloat(total * 3 / 200);
 
             }
-            else if(j>12){
-                total = i + parseFloat(total*1/100);
+            else if (j > 12) {
+                total = i + parseFloat(total * 1 / 100);
             }
-            
+
             document.getElementById("totalkembali").innerHTML = parseFloat(total);
 
             pinjam.push(i);
@@ -38,58 +39,85 @@
 
         }
 
+        function clear2() {
+            counter++;
+            document.getElementById("angkabaru").innerHTML = parseInt(counter + 1);
+        }
+
+        function tampildata() {
+            for (var i = 0; i < counter; i++) {
+
+
+            }
+
+
+        }
+
+    </script>
+
+    <script type="javascript">
+
+
         </script>
-    </head>
+</head>
+
 <body>
-    <section data-role = "page" id = "win1">
+    <section data-role="page" id="win1">
         <header data-role="header">
             <h1>Pemasukan angka pinjaman</h1>
 
         </header>
 
         <article data-role="content">
-           <form>Angka Pinjaman : </form>
-           <input type="text" id="angkapinjaman">
-           <br>
-           <form>Angka Cicilan : </form>
-           <input type="text" id="angkacicilan">
-           <br>
-            <button type="button" onclick="hitung()"> perhitungan </button>
-           <a href="#popupBasic" data-rel="popup">Open Popup</a>
- 
-            <div data-role="popup" id="popupBasic" >
-            <p id="totalkembali"></p>
+            <div data-role="collapsible">
+                <h1>Pinjaman <span id="angkabaru">1</span></h1>
+                <form>Angka Pinjaman : </form>
+                <input type="text" id="angkapinjaman">
+                <br>
+                <form>Angka Cicilan : </form>
+                <input type="text" id="angkacicilan">
             </div>
 
-           <br>
+            <br>
+            <button type="button" onclick="hitung()"> perhitungan </button>
+            <a href="#popupBasic" data-rel="popup">
+                <h3>total kembali nanti </h3>
+            </a>
 
-           <button type = "button" onclick="clear()"> clear field </button>
+            <div data-role="popup" id="popupBasic">
+                <p id="totalkembali"></p>
+            </div>
+
+            <br>
+
+            <button type="button" onclick="clear2()"> tambah pinjaman baru </button>
 
 
         </article>
 
         <footer data-role="footer">
 
-            <button type="button"  onclick = "web2()"><a href="#win2">List Cicilan</a></button>
+            <a href="#win2">List Cicilan</a>
         </footer>
     </section>
 
-    <section data-role="page" id = "win2">
+    <section data-role="page" id="win2">
         <header data-role="header">
-            <h1>Header</h1>
+            <h1>Menampilkan semua data cicilan</h1>
 
         </header>
 
         <article data-role="content">
-            <h1>content</h1>
+            <button type="button" onclick="tampildata()">Menampilkan data</button>
+            
 
         </article>
 
         <footer data-role="footer">
-   
+
             <a href="#win1" style="text-align: center;">Kembali ke Pemasukan</a>
         </footer>
-        
+
     </section>
 
 
