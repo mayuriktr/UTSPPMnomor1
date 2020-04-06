@@ -82,6 +82,10 @@
         }
 
        }
+
+       $("#coba"  ).on( "pageinit", "#aboutPage", function( event ) {
+            alert( "This page was just enhanced by jQuery Mobile!" );
+        });
  
 
     </script>
@@ -116,7 +120,7 @@
 
             <br>
 
-            <button type="button" onclick="clear2()"> tambah pinjaman baru </button>
+            <button type="button" onclick="clear2()" id = "coba"> tambah pinjaman baru </button>
 
 
         </article>
